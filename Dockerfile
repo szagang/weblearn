@@ -1,7 +1,7 @@
 FROM java:8-jdk
 
 WORKDIR /home/apps/
-ADD target/ddd-1.0.0.jar .
+ADD target/zzz-1.0.0.jar .
 ADD target/lib ./lib
 ADD start.sh .
 
