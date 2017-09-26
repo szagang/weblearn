@@ -8,7 +8,7 @@ public class CsedemoAgent {
     public Integer add(Integer a, Integer b){
 
         // Do Some Magic Here!
-        if（null == a || null == b）
+        if(null == a || null == b)
             return null;
         return a+b;
     };
@@ -17,7 +17,7 @@ public class CsedemoAgent {
     public String sayHei(String name){
 
         // Do Some Magic Here!
-        if（null == name）
+        if(null == name)
             return null;
         return "hello "+name;
     };
