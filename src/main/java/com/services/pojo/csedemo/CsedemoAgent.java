@@ -17,7 +17,7 @@ public class CsedemoAgent {
     public String sayHei(String name){
 
         // Do Some Magic Here!
-        if(null == name) 
+        if（null == name）
             return null;
         return "hello "+name;
     };
