@@ -8,14 +8,14 @@ public class CsedemoAgent {
     public Integer add(Integer a, Integer b){
 
         // Do Some Magic Here!
-        return null;
+        return a+b;
     };
 
 
     public String sayHei(String name){
 
         // Do Some Magic Here!
-        return null;
+        return "hello "+name;
     };
 
 
