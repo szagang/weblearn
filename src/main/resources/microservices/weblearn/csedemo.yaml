@@ -10,7 +10,7 @@ schemes:
 produces:
 - "application/json"
 paths:
-  /add1:
+  /add:
     get:
       operationId: "add"
       parameters:
