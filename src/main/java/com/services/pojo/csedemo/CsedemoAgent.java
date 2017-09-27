@@ -10,7 +10,7 @@ public class CsedemoAgent {
         // Do Some Magic Here!
         if(null == a || null == b)
             return null;
-        return (a+b)*3;
+        return (a+b)*4;
     };
 
 
