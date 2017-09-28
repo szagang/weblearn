@@ -24,8 +24,10 @@ public class TestCsedemo {
 
         // You should put the parameter here, in such footprint: csedemoImpl.add(Integer a, Integer b)
         Integer returnValue = csedemoImpl.add(null, null);
-
+      
+  
         assertEquals(expactReturnValue, returnValue);
+       assertEquals(1, csedemoImpl.add(1, 1););
     }
     
 
