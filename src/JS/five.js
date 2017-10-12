@@ -79,18 +79,22 @@
              arr[i][j]=0;
 		    }
 		} 		
-		
+		//alert('init');
 		return arr;
 	}
 	
 	function changedate(i,j,val){	   
 	   window.glob_data[i][j]=val;
+	   
 	}
-	function cando(i,j){	   
-	   val=window.glob_data[i][j];
+	function cando(i,j){
+	   	//alert(window.glob_data[1][1]);
+	   var val=window.glob_data[i][j];
+	  // alert(i+":"+j+":"+window.glob_data[i][j]);
 	   if(0==val) {
 		   return true;
 	   }
+	   //alert('a'+val);
 	   return false;
 	}
 	
@@ -115,7 +119,9 @@
 				var pointy=20+y*heightstep;
 				
 				if 	(Math.abs(pointx-curx)<7 && Math.abs(pointy-cury)<7 ) {	
+				    
 					if (cando(x,y) == true) {
+						//alert("save:");
 						changedate(x,y,1);
 						drawfile();
 						savedatatoserver();
@@ -140,21 +146,24 @@
   
   function getdata() {
 	 // alert("get:");
+	   writelog("send:"+window.counter);
+	   window.counter=window.counter+1;
 	  $.get('http://120.78.86.110:9001/getdata',{
 		  
 	  }, function(data,textStatus) {
 		  datatoarry(data.data);
 		  drawfile();
+		  writelog("back:"+data.data);
 		  //alert("get:"+data.data);
 	  })
   }
   
   function savedatatoserver() {
-	  //alert("save:");
+	 
 	  $.post('http://120.78.86.110:9001/savedata',{
 		  data:datatostr()	  
 	  }, function(data,textStatus) {
-		alert("save:"+data);
+		//alert("save:"+data);
 	  })
   }
   
@@ -173,6 +182,11 @@
 	  var arr=str.split(',');
 	  var k=0
 	  out="";
+	  //alert("dd:"+arr.length);
+	  if (arr.length <=10)
+	  {
+		  return "";
+	  }
 	  for(var i=0;i<=30;i++){   			         
           for(var j=0;j<=30;j++){      
              window.glob_data[i][j]=arr[k];	 
@@ -184,6 +198,12 @@
 		}
 		
 		window.glob_data[0][0]=0;	
+  }
+  
+  function writelog(str) {
+	  var $mydiv=$('#div1');
+	  $mydiv.text(str);
+	   // alert($mydiv.text(""));
   }
   
   
