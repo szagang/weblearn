@@ -16,10 +16,10 @@
 <body>
 
 <canvas class="classfivepaint"  id="fivepaint" width="1000" height="1000"></canvas>
-
+<div id='div1'> ddddd</div>
 <script>
 			//var canvasC=document.getElementById('fivepaint');
-			initfive();
+			initfive();			
 			document.addEventListener('mousedown', documentMouseDownHandler, false);
 			var $canvasC=$("#fivepaint");			
 			var ctx = $canvasC[0].getContext("2d");
@@ -27,7 +27,9 @@
 			//ctx.fillStyle = "rgba(200,0,0,0.6)";
 			//ctx.fillRect (10, 10, 55, 50);
 			//ctx.fillStyle = "rgba(0, 0, 200, 0.2)";
-			window.glob_data=initdate();	
+			window.glob_data=initdate();
+			window.counter=1;
+			writelog("aaaa");
 			getdata();
 			//setInterval(getdata,'500');// 注意函数名没有引号和括弧！ 
 			setInterval(function()
