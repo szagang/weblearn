@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="wap-font-scale" content="no">
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="css/iconfont/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="style/reset.css">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="js/zcircleMove.js"></script>
+	<script type="text/javascript" src="js/five.js"></script>
+</head>
+
+<body>
+
+<canvas class="classfivepaint"  id="fivepaint" width="1000" height="1000"></canvas>
+
+<script>
+			//var canvasC=document.getElementById('fivepaint');
+			initfive();
+			document.addEventListener('mousedown', documentMouseDownHandler, false);
+			var $canvasC=$("#fivepaint");			
+			var ctx = $canvasC[0].getContext("2d");
+			window.glob_cav=$canvasC[0].getContext("2d");
+			//ctx.fillStyle = "rgba(200,0,0,0.6)";
+			//ctx.fillRect (10, 10, 55, 50);
+			//ctx.fillStyle = "rgba(0, 0, 200, 0.2)";
+			window.glob_data=initdate();	
+			getdata();
+			//setInterval(getdata,'500');// 注意函数名没有引号和括弧！ 
+			setInterval(function()
+			{
+			//alert("time");
+			getdata();
+			},3000);
+			//$('body').everyTime('1s',getdata);
+			//changedate(10,10,1);
+			//drawfile();
+			
+</script>
+</body>
+</html>
